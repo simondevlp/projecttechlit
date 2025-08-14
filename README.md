@@ -1,5 +1,3 @@
 # Concept
->elders can't tech
->we teach elders to tech
->qr codes, popular scams, social media
->learning interface elder-friendly 
+young children (digital natives themselves) cant differentiate scams and mr beast videos
+we aim to fix that.
