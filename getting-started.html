@@ -1,11 +1,11 @@
 <script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
+    var gk_isXlsx = false;
+    var gk_xlsxFileLookup = {};
+    var gk_fileData = {};
+    function filledCell(cell) {
+        return cell !== '' && cell != null;
+    }
+    function loadFileData(filename) {
         if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
             try {
                 var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
@@ -19,11 +19,11 @@
 
                 // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
                 var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                    row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
                 );
                 // Fallback
                 if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
+                    headerRowIndex = 0;
                 }
 
                 // Convert filtered JSON back to CSV
@@ -36,9 +36,11 @@
             }
         }
         return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+    }
+</script>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,27 +53,35 @@
             line-height: 1.5;
             background-color: #f8f9fa;
         }
+
         .navbar {
             background-color: #007bff;
         }
-        .navbar-brand, .nav-link {
+
+        .navbar-brand,
+        .nav-link {
             color: white !important;
             font-size: 1.3rem;
         }
+
         .nav-link:hover {
             color: #e0e0e0 !important;
         }
+
         .content {
             padding: 3rem 0;
         }
+
         .content h1 {
             font-size: 2.5rem;
             color: #343a40;
         }
+
         .content p {
             font-size: 1.2rem;
             color: #495057;
         }
+
         footer {
             background-color: #343a40;
             color: white;
@@ -81,11 +91,13 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html">Tech for Elders</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -107,7 +119,8 @@
     <div class="content">
         <div class="container">
             <h1>Getting Started with Technology</h1>
-            <p>This section will guide you through the basics of using computers, tablets, and smartphones. Add your content here to explain how to turn on devices, navigate screens, and use basic apps.</p>
+            <p>This section will guide you through the basics of using computers, tablets, and smartphones. Add your
+                content here to explain how to turn on devices, navigate screens, and use basic apps.</p>
         </div>
     </div>
 
@@ -119,4 +132,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
